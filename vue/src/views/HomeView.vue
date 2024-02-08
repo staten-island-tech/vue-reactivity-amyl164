@@ -1,16 +1,16 @@
 <template>
   <div>
-    <DestCard v-for="burger in burgers" :key ="burger.name" :Destination="burger"/>
+    <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/>
   </div>
 </template>
 
 <script setup>
 import DestCard from "@/components/DestCard.vue";
-const burger = [
-  {
-    name: "Bottom Bun",
+const ingredients = [
+{
+    name: "Top Bun",
     price: 0.50,
-    img: "https://www.niceburger.be/assets/images/burger/bottom.png",
+    img: "https://static1.squarespace.com/static/5e13726e4066163f23e4d2ed/5e272c63b622362df79e64a6/5e272c64b622362df79e652b/1580413462340/?format=1500w",
   },
   {
     name: "Cheese",
@@ -58,9 +58,9 @@ const burger = [
     img: "https://static.vecteezy.com/system/resources/previews/010/833/988/original/mayonnaise-sauce-isolated-on-white-background-top-view-png.png",
   },
   {
-    name: "Top Bun",
+    name: "Bottom Bun",
     price: 0.50,
-    img: "https://static1.squarespace.com/static/5e13726e4066163f23e4d2ed/5e272c63b622362df79e64a6/5e272c64b622362df79e652b/1580413462340/?format=1500w",
+    img: "https://www.niceburger.be/assets/images/burger/bottom.png",
   },
 ]
 </script>
