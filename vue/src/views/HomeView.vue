@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="body">
+  <div class="title">BURGER MAKER!</div>
+  <div class="container">
     <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -65,4 +68,21 @@ const ingredients = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+  } 
+  .body {
+    background-color: antiquewhite;
+  }
+  .title {
+    font-size: 5rem;
+    text-align: center;
+  }
+</style>
