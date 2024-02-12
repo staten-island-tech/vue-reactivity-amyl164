@@ -2,13 +2,17 @@
   <div class="body">
   <div class="title">BURGER MAKER!</div>
   <div class="container">
-    <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/>
+    <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/> 
+  </div>
+  <div class="card-container">
+    <ShoppingCart  />
   </div>
 </div>
 </template>
 
 <script setup>
 import DestCard from "@/components/DestCard.vue";
+import ShoppingCart from "@/components/ShoppingCart.vue";
 const ingredients = [
 {
     name: "Top Bun",
@@ -84,5 +88,11 @@ const ingredients = [
   .title {
     font-size: 5rem;
     text-align: center;
+  }
+  .card-container{
+    width: 70%;
+ height: 85%;
+ background-color: #ffffff;
+
   }
 </style>
