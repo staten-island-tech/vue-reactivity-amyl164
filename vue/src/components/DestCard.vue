@@ -22,6 +22,7 @@ function insertcards(arr){
             "beforeend",
             `  <div class="card">
               <img :src="${ingredient.img}" alt=""/>
+            </div>
               `
         )})}
 function increment(){
