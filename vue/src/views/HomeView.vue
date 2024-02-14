@@ -4,10 +4,10 @@
   <div class="container">
     <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/> 
   </div>
-  <div class="card-container">
+</div>
+ <div class="card-container">
     <ShoppingCart  />
   </div>
-</div>
 </template>
 
 <script setup>
@@ -74,25 +74,25 @@ const ingredients = [
 
 <style scoped>
 .container {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 100%;
-  } 
-  .body {
-    background-color: antiquewhite;
-  }
-  .title {
-    font-size: 5rem;
-    text-align: center;
-  }
-  .card-container{
-    width: 70%;
- height: 85%;
- background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  
+}
 
-  }
+.body {
+  background-color: antiquewhite;
+  width: 70%; 
+
+}
+
+.title {
+  font-size: 5rem;
+  text-align:center;
+}
+
+
 </style>
