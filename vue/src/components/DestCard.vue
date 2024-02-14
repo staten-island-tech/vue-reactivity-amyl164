@@ -4,7 +4,7 @@
        <h2>{{ ingredient.name }}</h2>
        <img :src="ingredient.img" alt=""/>
        <h3>{{ "$" + ingredient.price }}</h3>
-       <button class="btn">Add to Shopping Cart!</button>
+       <button @click="increment" class="btn">Add to Shopping Cart!</button>
     </div>
 </div>
 </template>
@@ -13,6 +13,20 @@
 const props = defineProps({
     ingredient: Object
 })
+const DOMSelectors = {
+    body2: document.querySelector(".body2"),
+}
+function insertcards(arr){
+    arr.forEach((ingredient) => {
+        DOMSelectors.body2.insertAdjacentHTML(
+            "beforeend",
+            `  <div class="card">
+              <img :src="${ingredient.img}" alt=""/>
+              `
+        )})}
+function increment(){
+  insertcards()
+}
 </script>
 
 <style  scoped>

@@ -6,9 +6,8 @@
 </template>
 
 <script setup>
-const props = defineProps({
-    ingredient: Object
-})
+
+
 </script>
 
 <style scoped>

@@ -86,7 +86,6 @@ const ingredients = [
 .body {
   background-color: antiquewhite;
   width: 70%; 
-
 }
 
 .title {
