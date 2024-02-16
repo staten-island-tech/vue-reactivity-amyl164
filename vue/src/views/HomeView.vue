@@ -6,7 +6,7 @@
   </div>
 </div>
  <div class="card-container">
-    <ShoppingCart  />
+    <ShoppingCart v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/>
   </div>
 </template>
 

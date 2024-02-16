@@ -1,5 +1,4 @@
 <template>
-  From ShoppingCart: {{ store.cart }}
     <div>
     <div class="card">
        <h2>{{ ingredient.name }}</h2>
@@ -14,7 +13,6 @@
 const props = defineProps({
     ingredient: Object
 })
-import { store } from './store.js'
 </script>
 
 <style  scoped>

@@ -1,15 +1,14 @@
 <template>
-    From DestCard: {{ store.cart }}
     <div class="body2">
         <h1 class="title2">Shopping Cart</h1>
         <img :src="ingredient.img" alt=""/>
-
     </div>
 </template>
 
 <script setup>
-import { store } from './store.js'
-
+const props = defineProps({
+    ingredient: Object
+})
 </script>
 
 <style scoped>
@@ -23,5 +22,9 @@ height: 889vh;
 .title2{
 text-align:center;
 font-size: 3rem;
+}
+img {
+    height: 300px;
+    object-fit: cover;
 }
 </style>
