@@ -14,6 +14,8 @@
 <script setup>
 import DestCard from "@/components/DestCard.vue";
 import ShoppingCart from "@/components/ShoppingCart.vue";
+
+
 const ingredients = [
 {
     name: "Top Bun",

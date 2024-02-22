@@ -1,13 +1,23 @@
 <template>
     <div class="body2">
         <h1 class="title2">Shopping Cart</h1> 
-        <img :src="ingredient.img" alt=""/>
+        <div class="if" v-if="cart.length === 0">
+        <h2>No items in cart</h2>
+    </div>
+    <div v-else>
+        <div v-for="ingredient in cart" :key="ingredient.name" class="cartt">
+            <h2>{{ ingredient.name }}</h2>
+        </div>
+    </div>
     </div>
 </template>
 
 <script setup>
+import {ref} from 'vue';
+const cart = ref([])
+
 const props = defineProps({
-    ingredient: Object
+    cart: Array
 })
 </script>
 

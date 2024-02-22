@@ -4,7 +4,7 @@
        <h2>{{ ingredient.name }}</h2>
        <img :src="ingredient.img" alt=""/>
        <h3>{{ "$" + ingredient.price }}</h3>
-       <button @click="addtocart" class="btn">Add to Shopping Cart!{{ count }}</button>
+       <button @click="addtocart" class="btn">Add to Shopping Cart!</button>
     </div>
 </div>
 </template>
@@ -13,6 +13,14 @@
 const props = defineProps({
     ingredient: Object
 })
+
+import {ref} from 'vue';
+const cart = ref([])
+
+function addtocart(){
+  cart.value.push(props.ingredient);
+  console.log(cart.value);
+}
 </script>
 
 <style  scoped>
