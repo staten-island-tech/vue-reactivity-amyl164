@@ -4,10 +4,11 @@
   <div class="container">
     <DestCard v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/> 
   </div>
-</div>
- <div class="card-container">
-    <ShoppingCart v-for="ingredient in ingredients" :key ="ingredients.name" :ingredient="ingredient"/>
+  <div>
+    <ShoppingCart :cart="cart"/>
   </div>
+</div>
+
 </template>
 
 <script setup>

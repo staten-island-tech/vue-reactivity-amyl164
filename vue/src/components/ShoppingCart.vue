@@ -1,6 +1,6 @@
 <template>
     <div class="body2">
-        <h1 class="title2">Shopping Cart</h1>
+        <h1 class="title2">Shopping Cart</h1> 
         <img :src="ingredient.img" alt=""/>
     </div>
 </template>
