@@ -5,7 +5,7 @@
         <h2>No items in cart</h2>
     </div>
     <div v-else>
-        <div v-for="ingredient in cart" :key="ingredient.name" class="cartt">
+        <div v-for="(ingredient) in cart" :key="ingredient.name" class="cartt">
             <h2>{{ ingredient.name }}</h2>
         </div>
     </div>

@@ -21,6 +21,12 @@ function addtocart(){
   cart.value.push(props.ingredient);
   console.log(cart.value);
 }
+
+// const addtocart = (ingredient) => {
+
+// cart.value.push(ingredient);
+
+// };
 </script>
 
 <style  scoped>
