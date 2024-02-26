@@ -11,7 +11,7 @@
             <button @click="remove()" class="btn">Remove</button>
         </div>
     </div>
-    <h2 class="cost">Total Cost:{{ total() }}</h2>
+    <h2 class="cost">Total Cost:</h2>
     </div>
 </template>
 
