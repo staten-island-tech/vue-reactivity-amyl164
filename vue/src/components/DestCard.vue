@@ -4,7 +4,7 @@
        <h2>{{ ingredient.name }}</h2>
        <img :src="ingredient.img" alt=""/>
        <h3>{{ "$" + ingredient.price }}</h3>
-       <button @click=" addToCart(ingredient) " class="btn">Add to Shopping Cart!</button>
+       <button @click=" addToCart(ingredient) " class="btnn">Add to Shopping Cart!</button>
     </div>
 </div>
 </template>
@@ -34,7 +34,7 @@ img{
     width: 555px;
     height: 70vh;
   } 
-  .btn {
+  .btnn {
     font-size: 1.5rem;
   }
 

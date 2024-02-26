@@ -1,5 +1,4 @@
 <template>
-    From ShoppingCart: {{ store.cart }}
     <div class="body2">
         <h1 class="title2">Shopping Cart</h1> 
         <div class="if" v-if="store.cart.length === 0">
@@ -8,8 +7,11 @@
     <div v-else>
         <div v-for="(ingredient) in store.cart" :key="ingredient.name" class="cartt">
             <h2>{{ ingredient.name }}</h2>
+            <img :src="ingredient.img" alt=""/>
+            <button @click="remove()" class="btn">Remove</button>
         </div>
     </div>
+    <h2 class="cost">Total Cost:{{ total() }}</h2>
     </div>
 </template>
 
@@ -20,6 +22,24 @@ import {ref} from 'vue';
 const props = defineProps({
     cart: Array
 })
+function remove(){
+    const removebuttons = document.querySelectorAll(".btn");
+        removebuttons.forEach((button)=> {
+            button.addEventListener("click",function(event){
+                const objectToRemove =  event.target.parentElement;
+                objectToRemove.remove();
+            })})};
+
+function total(){
+    const arr = [42,452,245,14]
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+        sum+=arr[i]
+    }
+    console.log(sum)
+}
+total(arr)
+
 </script>
 
 <style scoped>
@@ -29,6 +49,7 @@ width: 30%;
 position:absolute;
 top:0; right:0; 
 height: 889vh;
+
 }
 .title2{
 text-align:center;
@@ -38,4 +59,8 @@ img {
     height: 300px;
     object-fit: cover;
 }
+.cartt,h2{
+    text-align:center;
+}
+
 </style>
