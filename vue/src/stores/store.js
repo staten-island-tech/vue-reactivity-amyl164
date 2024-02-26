@@ -1,7 +1,6 @@
-import {ref} from 'vue';
-const cart = ref([])
+import { reactive } from 'vue'
 
-export function addtocart(){
-     cart.value.push(props.ingredient);
-      console.log(cart.value);
-     }
+
+export const store = reactive({
+     cart: []
+   })

@@ -1,12 +1,12 @@
 <template>
-    From ShoppingCart: {{ addtocart }}
+    From ShoppingCart: {{ store.cart }}
     <div class="body2">
         <h1 class="title2">Shopping Cart</h1> 
-        <div class="if" v-if="cart.length === 0">
+        <div class="if" v-if="store.cart.length === 0">
         <h2>No items in cart</h2>
     </div>
     <div v-else>
-        <div v-for="(ingredient) in cart" :key="ingredient.name" class="cartt">
+        <div v-for="(ingredient) in store.cart" :key="ingredient.name" class="cartt">
             <h2>{{ ingredient.name }}</h2>
         </div>
     </div>
@@ -14,7 +14,8 @@
 </template>
 
 <script setup>
-import {addtocart} from "@/stores/store.js";
+import {store} from "@/stores/store.js";
+import {ref} from 'vue';
 
 const props = defineProps({
     cart: Array

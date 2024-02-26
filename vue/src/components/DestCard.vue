@@ -4,21 +4,22 @@
        <h2>{{ ingredient.name }}</h2>
        <img :src="ingredient.img" alt=""/>
        <h3>{{ "$" + ingredient.price }}</h3>
-       <button @click="addtocart" class="btn">Add to Shopping Cart!</button>
+       <button @click=" addToCart(ingredient) " class="btn">Add to Shopping Cart!</button>
     </div>
 </div>
-From DestCard: {{ addtocart }}
 </template>
 
 <script setup>
-import {addtocart} from "@/stores/store.js";
+import {store} from '@/stores/store.js'
+
 const props = defineProps({
     ingredient: Object
 })
-
+const addToCart = function(product){
+  store.cart.push(product)
+}
 
 </script>
-
 <style  scoped>
 img{
     height: 300px;
