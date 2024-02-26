@@ -1,4 +1,5 @@
 <template>
+    From ShoppingCart: {{ addtocart }}
     <div class="body2">
         <h1 class="title2">Shopping Cart</h1> 
         <div class="if" v-if="cart.length === 0">
@@ -13,8 +14,7 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
-const cart = ref([])
+import {addtocart} from "@/stores/store.js";
 
 const props = defineProps({
     cart: Array

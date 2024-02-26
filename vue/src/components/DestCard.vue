@@ -7,26 +7,16 @@
        <button @click="addtocart" class="btn">Add to Shopping Cart!</button>
     </div>
 </div>
+From DestCard: {{ addtocart }}
 </template>
 
 <script setup>
+import {addtocart} from "@/stores/store.js";
 const props = defineProps({
     ingredient: Object
 })
 
-import {ref} from 'vue';
-const cart = ref([])
 
-function addtocart(){
-  cart.value.push(props.ingredient);
-  console.log(cart.value);
-}
-
-// const addtocart = (ingredient) => {
-
-// cart.value.push(ingredient);
-
-// };
 </script>
 
 <style  scoped>
