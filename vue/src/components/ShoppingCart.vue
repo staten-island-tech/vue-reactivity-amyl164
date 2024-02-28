@@ -8,7 +8,7 @@
         <div v-for="(ingredient) in store.cart" :key="ingredient.name" class="cartt">
             <h2>{{ ingredient.name }}</h2>
             <img :src="ingredient.img" alt=""/>
-            <button @click="remove()" class="btn">Remove</button>
+            <button @click="remove(ingredient)" class="btn">Remove</button>
         </div>
     </div>
     <h2 class="cost">Total Cost:${{ total()}}</h2>
@@ -17,20 +17,16 @@
 
 <script setup>
 import {store} from "@/stores/store.js";
-import {ref} from 'vue';
+
 
 const props = defineProps({
     cart: Array
 })
-function remove(){
-    const removebuttons = document.querySelectorAll(".btn");
-        removebuttons.forEach((button)=> {
-            button.addEventListener("click",function(event){
-                const objectToRemove =  event.target.parentElement;
-                objectToRemove.remove();
-                const remove = store.cart
-                remove.splice(0,1);
-            })})};
+function remove(ingredient){
+    const cartIndex = store.cart.indexOf(ingredient);
+    store.cart.splice(cartIndex, 1);
+    console.log(store.cart)
+  };
 
 function total(){
     const arr = store.cart
@@ -46,11 +42,10 @@ function total(){
 
 <style scoped>
 .body2{
-background-color: blue;
 width: 30%; 
 position:absolute;
 top:0; right:0; 
-height: 889vh;
+
 }
 .title2{
 text-align:center;
@@ -68,6 +63,8 @@ img {
     background-color: red;
     border-radius: 0.3rem;
     font-size: 1rem;
-    
+}
+.cost{
+    font-size: 2rem;
 }
 </style>
